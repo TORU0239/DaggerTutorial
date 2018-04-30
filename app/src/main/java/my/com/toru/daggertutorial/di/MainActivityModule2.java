@@ -2,7 +2,7 @@ package my.com.toru.daggertutorial.di;
 
 import dagger.Module;
 import dagger.Provides;
-import my.com.toru.daggertutorial.Test1;
+import my.com.toru.daggertutorial.remote.Test1;
 
 @Module
 public class MainActivityModule2 {
