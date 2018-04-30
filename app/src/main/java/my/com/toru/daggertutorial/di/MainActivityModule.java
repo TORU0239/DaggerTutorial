@@ -2,18 +2,18 @@ package my.com.toru.daggertutorial.di;
 
 import dagger.Module;
 import dagger.Provides;
-import my.com.toru.daggertutorial.remote.Test1;
-import my.com.toru.daggertutorial.remote.Test2;
+import my.com.toru.daggertutorial.ui.main.MainActivity;
 
 @Module
 public class MainActivityModule {
-    @Provides
-    Test1 getTest(){
-        return new Test1();
+    private MainActivity activity;
+
+    public MainActivityModule(MainActivity activity) {
+        this.activity = activity;
     }
 
     @Provides
-    Test2 getTest2(){
-        return new Test2();
+    MainActivity getMainActivity(){
+        return activity;
     }
 }
