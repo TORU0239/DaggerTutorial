@@ -6,34 +6,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import javax.inject.Inject;
-
 import my.com.toru.daggertutorial.R;
-import my.com.toru.daggertutorial.di.DaggerMainActivityComponent;
-import my.com.toru.daggertutorial.di.MainActivityModule;
 import my.com.toru.daggertutorial.ui.detail.DetailActivity;
-import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterImp;
-import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterModule;
 import my.com.toru.daggertutorial.ui.main.view.MainView;
 
 public class MainActivity extends AppCompatActivity implements MainView{
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    @Inject
-    MainPresenterImp presenter;
+//    @Inject
+//    MainPresenterImp presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DaggerMainActivityComponent
-                .builder()
-                .mainActivityModule(new MainActivityModule(this))
-                .mainPresenterModule(new MainPresenterModule())
-                .build().inject(this);
-
-        presenter.showTest1();
-        presenter.showTest2();
+//        DaggerMainActivityComponent
+//                .builder()
+//                .mainActivityModule(new MainActivityModule(this))
+//                .mainPresenterModule(new MainPresenterModule())
+//                .build().inject(this);
+//
+//        presenter.showTest1();
+//        presenter.showTest2();
 
         findViewById(R.id.next_btn).setOnClickListener(new View.OnClickListener() {
             @Override
