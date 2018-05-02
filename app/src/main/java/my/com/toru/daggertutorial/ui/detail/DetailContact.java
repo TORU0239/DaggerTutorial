@@ -1,13 +1,15 @@
 package my.com.toru.daggertutorial.ui.detail;
 
+import my.com.toru.daggertutorial.ui.detail.model.DetailModel;
+
 public interface DetailContact {
     interface DetailView{
-        void showToast(String str);
-        void showToast(int id);
+        void onClickButton();
+        void onShowResult(DetailModel model);
     }
 
     interface DetailPresenter{
-        void request();
-        void request2();
+        void request(DetailModel model);
+        void request2(DetailModel model);
     }
 }

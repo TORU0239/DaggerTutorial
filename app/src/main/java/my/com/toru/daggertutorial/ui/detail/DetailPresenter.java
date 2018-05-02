@@ -1,23 +1,29 @@
 package my.com.toru.daggertutorial.ui.detail;
 
-import javax.inject.Inject;
+import android.os.Handler;
+
+import my.com.toru.daggertutorial.ui.detail.model.DetailModel;
 
 public class DetailPresenter implements DetailContact.DetailPresenter{
 
     private DetailContact.DetailView view;
 
-    @Inject
     public DetailPresenter(DetailContact.DetailView view) {
         this.view = view;
     }
 
     @Override
-    public void request() {
-        view.showToast("detail test!!");
+    public void request(DetailModel model) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                view.onShowResult(new DetailModel(false, "TEST RESULT SUCCESS!!"));
+            }
+        }, 2000);
     }
 
     @Override
-    public void request2() {
-        view.showToast("detail test 22!!");
+    public void request2(DetailModel model) {
+        view.onShowResult(new DetailModel(false, "SECOND TEST RESULT SUCCESS!!"));
     }
 }
