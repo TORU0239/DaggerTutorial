@@ -34,12 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
         presenter.showTest1();
         presenter.showTest2();
 
-        findViewById(R.id.next_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DetailActivity.class));
-            }
-        });
+        findViewById(R.id.next_btn).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, DetailActivity.class)));
     }
 
     @Override
