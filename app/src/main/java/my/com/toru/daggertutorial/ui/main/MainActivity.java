@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import my.com.toru.daggertutorial.R;
 import my.com.toru.daggertutorial.di.DaggerMainActivityComponent;
 import my.com.toru.daggertutorial.di.MainActivityModule;
-import my.com.toru.daggertutorial.ui.main.presenter.MainPresenter;
+import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterImp;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterModule;
 import my.com.toru.daggertutorial.ui.main.view.MainView;
 
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @Inject
-    MainPresenter presenter;
+    MainPresenterImp presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
