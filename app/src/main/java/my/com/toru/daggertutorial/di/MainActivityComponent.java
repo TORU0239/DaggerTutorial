@@ -4,7 +4,7 @@ import dagger.Component;
 import my.com.toru.daggertutorial.ui.main.MainActivity;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterModule;
 
-@Component(modules = {MainActivityModule.class, MainPresenterModule.class})
+@Component(modules = MainPresenterModule.class)
 public interface MainActivityComponent {
     void inject(MainActivity activity);
 }

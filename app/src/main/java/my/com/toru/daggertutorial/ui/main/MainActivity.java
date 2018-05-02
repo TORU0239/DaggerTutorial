@@ -9,14 +9,11 @@ import android.widget.Toast;
 import javax.inject.Inject;
 
 import my.com.toru.daggertutorial.R;
-import my.com.toru.daggertutorial.app.DaggerTutorialApp;
 import my.com.toru.daggertutorial.di.DaggerMainActivityComponent;
-import my.com.toru.daggertutorial.di.MainActivityModule;
 import my.com.toru.daggertutorial.ui.detail.DetailActivity;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterImp;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterModule;
 import my.com.toru.daggertutorial.ui.main.view.MainView;
-import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity implements MainView{
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -31,11 +28,8 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         DaggerMainActivityComponent
                 .builder()
-                .mainActivityModule(new MainActivityModule(this))
-                .mainPresenterModule(new MainPresenterModule())
+                .mainPresenterModule(new MainPresenterModule(this))
                 .build().inject(this);
-
-
 
         presenter.showTest1();
         presenter.showTest2();
