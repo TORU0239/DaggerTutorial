@@ -1,7 +1,9 @@
 package my.com.toru.daggertutorial.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import javax.inject.Inject;
@@ -9,6 +11,7 @@ import javax.inject.Inject;
 import my.com.toru.daggertutorial.R;
 import my.com.toru.daggertutorial.di.DaggerMainActivityComponent;
 import my.com.toru.daggertutorial.di.MainActivityModule;
+import my.com.toru.daggertutorial.ui.detail.DetailActivity;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterImp;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterModule;
 import my.com.toru.daggertutorial.ui.main.view.MainView;
@@ -31,6 +34,13 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         presenter.showTest1();
         presenter.showTest2();
+
+        findViewById(R.id.next_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DetailActivity.class));
+            }
+        });
     }
 
     @Override
