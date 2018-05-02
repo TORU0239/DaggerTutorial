@@ -14,6 +14,7 @@ public class DetailPresenter implements DetailContact.DetailPresenter{
 
     @Override
     public void request(DetailModel model) {
+        // Simulating networking call
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
