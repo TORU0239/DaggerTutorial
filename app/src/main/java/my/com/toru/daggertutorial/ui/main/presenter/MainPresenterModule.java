@@ -12,17 +12,7 @@ public class MainPresenterModule {
     public MainPresenterModule() { }
 
     @Provides
-    MainPresenter getMainP(final MainActivity activity){
-        return new MainPresenter() {
-            @Override
-            public void showTest1() {
-                ((MainView)activity).showToast("test");
-            }
-
-            @Override
-            public void showTest2() {
-                ((MainView)activity).showToast("test2");
-            }
-        };
+    MainPresenterImp getMainP(final MainActivity activity){
+        return new MainPresenterImp(activity);
     }
 }
