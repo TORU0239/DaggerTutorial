@@ -1,13 +1,19 @@
 package my.com.toru.daggertutorial.ui.main.presenter;
 
+import javax.inject.Inject;
+
 import my.com.toru.daggertutorial.ui.main.view.MainView;
+import retrofit2.Retrofit;
 
 public class MainPresenterImp implements MainPresenter {
 
     private MainView view;
+    private Retrofit retrofit;
 
-    public MainPresenterImp(MainView view) {
+    @Inject
+    public MainPresenterImp(MainView view, Retrofit retrofit) {
         this.view = view;
+        this.retrofit = retrofit;
     }
 
     @Override
