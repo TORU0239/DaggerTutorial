@@ -17,6 +17,7 @@ import my.com.toru.daggertutorial.ui.detail.DetailActivity;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterImp;
 import my.com.toru.daggertutorial.ui.main.presenter.MainPresenterModule;
 import my.com.toru.daggertutorial.ui.main.view.MainView;
+import my.com.toru.daggertutorial.ui.other.OtherActivity;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity implements MainView{
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
         
         presenter.showTest2();
 
-        findViewById(R.id.next_btn).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, DetailActivity.class)));
+        findViewById(R.id.next_btn).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, OtherActivity.class)));
     }
 
     @Override

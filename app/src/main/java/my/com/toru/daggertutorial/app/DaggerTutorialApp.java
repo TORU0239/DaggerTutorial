@@ -8,14 +8,12 @@ import javax.inject.Inject;
 import my.com.toru.daggertutorial.di.AppComponent;
 import my.com.toru.daggertutorial.di.DaggerAppComponent;
 import my.com.toru.daggertutorial.remote.RemoteModule;
+import my.com.toru.daggertutorial.ui.other.di.DummyDependModule;
 import retrofit2.Retrofit;
 
 public class DaggerTutorialApp extends Application {
 
     private AppComponent component;
-
-    @Inject Retrofit retrofit;
-
     public AppComponent getComponent() {
         return component;
     }
@@ -26,7 +24,5 @@ public class DaggerTutorialApp extends Application {
         component = DaggerAppComponent.builder()
                 .remoteModule(new RemoteModule())
                 .build();
-
-        component.inject(this);
     }
 }
