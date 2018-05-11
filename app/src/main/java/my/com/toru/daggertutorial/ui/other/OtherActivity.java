@@ -45,18 +45,64 @@ public class OtherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_other);
         textView = findViewById(R.id.other_text);
 
+        // TODO: deprecating below, in order to follow guideline from Google, enabling unnecessary injecting module.
         ((DaggerTutorialApp)getApplication()).getComponent()
                 .otherActivityBuilder()
                 .build()
                 .inject(this);
+        // COMMENT: Developers can change and improve above with using AndroidDagger element.
+
+        checkIfInjectedWell();
+    }
+
+    private void checkIfInjectedWell(){
+        String injectionResult = "";
 
         if(retrofit != null){
             Log.w(TAG, "retrofit not null!");
+            injectionResult = injectionResult.concat("retrofit not null!").concat("\n");
         }
         else{
             Log.w(TAG, "retrofit null!");
+            injectionResult = injectionResult.concat("retrofit null!").concat("\n");
         }
 
+        if(dummyDependency != null){
+            Log.w(TAG, "dummyDependency not null!");
+            injectionResult = injectionResult.concat("dummyDependency not null!").concat("\n");
+        }
+        else{
+            Log.w(TAG, "dummyDependency null!");
+            injectionResult = injectionResult.concat("dummyDependency null!").concat("\n");
+        }
 
+        if(dummyPushLibrary != null){
+            Log.w(TAG, "dummyPushLibrary not null!");
+            injectionResult = injectionResult.concat("dummyPushLibrary not null!").concat("\n");
+        }
+        else{
+            Log.w(TAG, "dummyPushLibrary null!");
+            injectionResult = injectionResult.concat("dummyPushLibrary null!").concat("\n");
+        }
+
+        if(otherDependency != null){
+            Log.w(TAG, "otherDependency not null!");
+            injectionResult = injectionResult.concat("otherDependency not null!").concat("\n");
+        }
+        else{
+            Log.w(TAG, "otherDependency null!");
+            injectionResult = injectionResult.concat("otherDependency null!").concat("\n");
+        }
+
+        if(util != null){
+            Log.w(TAG, "util not null!");
+            injectionResult = injectionResult.concat("util not null!").concat("\n");
+        }
+        else{
+            Log.w(TAG, "util null!");
+            injectionResult = injectionResult.concat("util null!").concat("\n");
+        }
+
+        textView.setText(injectionResult);
     }
 }
