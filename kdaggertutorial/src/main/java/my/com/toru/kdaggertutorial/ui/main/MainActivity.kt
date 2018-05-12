@@ -2,6 +2,7 @@ package my.com.toru.kdaggertutorial.ui.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import dagger.internal.DaggerCollections
 import my.com.toru.kdaggertutorial.R
 
 class MainActivity : AppCompatActivity() {
