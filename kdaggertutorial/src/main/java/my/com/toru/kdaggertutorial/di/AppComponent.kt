@@ -10,6 +10,7 @@ import javax.inject.Singleton
 @Component(modules = [AppModule::class])
 interface AppComponent {
     fun inject(app:KDaggerTutorialApp)
+    fun mainActivityBuilder():TestComponent.Builder
 }
 
 @Module
