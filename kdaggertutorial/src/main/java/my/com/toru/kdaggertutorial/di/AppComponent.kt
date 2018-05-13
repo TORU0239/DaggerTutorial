@@ -11,6 +11,7 @@ import javax.inject.Singleton
 interface AppComponent {
     fun inject(app:KDaggerTutorialApp)
     fun mainActivityBuilder():MainComponent.Builder
+    fun detailActivityBuilder():DetailComponent.Builder
 }
 
 @Module
