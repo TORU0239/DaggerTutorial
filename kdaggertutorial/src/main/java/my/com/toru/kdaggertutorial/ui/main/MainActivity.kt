@@ -7,7 +7,7 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 import my.com.toru.kdaggertutorial.R
 import my.com.toru.kdaggertutorial.app.KDaggerTutorialApp
-import my.com.toru.kdaggertutorial.di.DummyUtil
+import my.com.toru.kdaggertutorial.util.DummyUtil
 import my.com.toru.kdaggertutorial.ui.detail.DetailActivity
 import javax.inject.Inject
 
