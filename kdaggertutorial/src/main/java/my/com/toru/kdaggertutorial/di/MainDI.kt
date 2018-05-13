@@ -4,20 +4,21 @@ import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
 import my.com.toru.kdaggertutorial.ui.main.MainActivity
+import my.com.toru.kdaggertutorial.util.DummyUtil
 
 @Module
-class TestDI {
+class MainModule {
     @Provides
-    fun getTestModule() = DummyUtil()
+    fun getMainModule() = DummyUtil()
 }
 
-@Subcomponent(modules = [(TestDI::class)])
-interface TestComponent{
+@Subcomponent(modules = [(MainModule::class)])
+interface MainComponent{
     fun inject(app: MainActivity)
 
     @Subcomponent.Builder
     interface Builder{
-        fun testDI(module:TestDI):Builder
-        fun build():TestComponent
+        fun mainDI(module:MainModule):Builder
+        fun build():MainComponent
     }
 }

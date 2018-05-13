@@ -1,4 +1,4 @@
-package my.com.toru.kdaggertutorial.di
+package my.com.toru.kdaggertutorial.util
 
 import android.util.Log
 
