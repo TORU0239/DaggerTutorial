@@ -31,6 +31,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
 
     implementation 'com.google.dagger:dagger:2.13'
+    implementation 'com.android.support:support-v4:27.1.1'
     kapt 'com.google.dagger:dagger-compiler:2.13'
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 
