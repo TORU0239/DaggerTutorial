@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
 import my.com.toru.kdaggertutorial.ui.detail.DetailActivity
+import my.com.toru.kdaggertutorial.ui.detail.DetailFragment
 import my.com.toru.kdaggertutorial.util.DetailUtil
 import my.com.toru.kdaggertutorial.util.DummyUtil
 
@@ -21,7 +22,7 @@ class DetailModule2{
 
 @Subcomponent(modules = [DetailModule::class, DetailModule2::class])
 interface DetailComponent{
-    fun inject(activity:DetailActivity)
+    fun inject(fragment:DetailFragment)
 
     @Subcomponent.Builder
     interface Builder{
