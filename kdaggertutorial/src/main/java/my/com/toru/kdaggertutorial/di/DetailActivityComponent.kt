@@ -8,7 +8,8 @@ import my.com.toru.kdaggertutorial.ui.detail.DetailActivity
 @Component(modules = [DetailModule::class, DetailModule::class])
 interface ActivityComponent {
     fun inject(activity:DetailActivity)
-    fun detailFragmentBuilder():DetailComponent.Builder
+//    fun detailFragmentBuilder():DetailComponent.Builder
+//    fun detailFragmentBuilder2():DetailSecondComponent.Builder
 }
 
 @Module
