@@ -14,10 +14,6 @@ import javax.inject.Inject
 
 class DetailActivity : AppCompatActivity() {
 
-    val activityComponent:ActivityComponent by lazy {
-        DaggerActivityComponent.builder().build()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)

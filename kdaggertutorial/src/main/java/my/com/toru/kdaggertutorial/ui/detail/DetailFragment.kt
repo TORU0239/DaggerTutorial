@@ -9,19 +9,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import my.com.toru.kdaggertutorial.R
+import my.com.toru.kdaggertutorial.di.DaggerDetailFragmentComponent
 import my.com.toru.kdaggertutorial.presenter.DetailContracts
 import my.com.toru.kdaggertutorial.util.DetailUtil
 import my.com.toru.kdaggertutorial.util.DummyUtil
+import my.com.toru.kdaggertutorial.util.DummyUtil2
+import my.com.toru.kdaggertutorial.util.DummyUtil3
 import javax.inject.Inject
 
 
 class DetailFragment : Fragment(), DetailContracts.DetailView {
 
-//    @Inject
-//    lateinit var util: DummyUtil
-//
-//    @Inject
-//    lateinit var detailUtil: DetailUtil
+    @Inject
+    lateinit var util: DummyUtil
+
+    @Inject
+    lateinit var detailUtil: DetailUtil
+
+    @Inject
+    lateinit var dummyUtil2: DummyUtil2
+
+    @Inject
+    lateinit var dummyUtil3: DummyUtil3
 
     private val presenter:DetailPresenterImp by lazy {
         DetailPresenterImp(this@DetailFragment)
@@ -32,13 +41,12 @@ class DetailFragment : Fragment(), DetailContracts.DetailView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as DetailActivity).activityComponent.detailFragmentBuilder()
-                .build()
-                .inject(this@DetailFragment)
-//        Log.w("DetailActivity", util.testCode())
-//        Log.w("DetailActivity", detailUtil.testCode())
+        DaggerDetailFragmentComponent.builder().build().detailComponentBuilder().build().inject(this@DetailFragment)
 
-        presenter.onSimulateNetwork()
+        Log.w("DetailActivity", util.testCode())
+        Log.w("DetailActivity", detailUtil.testCode())
+        Log.w("DetailActivity", dummyUtil2.testCode())
+        Log.w("DetailActivity", dummyUtil3.testCode())
     }
 
     companion object {

@@ -3,11 +3,11 @@ package my.com.toru.kdaggertutorial.di
 import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
-import my.com.toru.kdaggertutorial.ui.detail.DetailActivity
 import my.com.toru.kdaggertutorial.ui.detail.DetailFragment
-import my.com.toru.kdaggertutorial.ui.detail.DetailPresenterImp
 import my.com.toru.kdaggertutorial.util.DetailUtil
 import my.com.toru.kdaggertutorial.util.DummyUtil
+import my.com.toru.kdaggertutorial.util.DummyUtil2
+import my.com.toru.kdaggertutorial.util.DummyUtil3
 
 @Module
 class DetailModule {
@@ -21,7 +21,19 @@ class DetailModule2{
     fun getDummyModule():DummyUtil = DummyUtil()
 }
 
-@Subcomponent(modules = [DetailModule::class, DetailModule2::class])
+@Module
+class DummyUtilModule2{
+    @Provides
+    fun getDummyModule2():DummyUtil2 = DummyUtil2()
+}
+
+@Module
+class DummyUtilModule3{
+    @Provides
+    fun getDummyModule3():DummyUtil3 = DummyUtil3()
+}
+
+@Subcomponent(modules = [DetailModule::class, DetailModule2::class, DummyUtilModule2::class, DummyUtilModule3::class])
 interface DetailComponent{
     fun inject(fragment:DetailFragment)
 
@@ -29,18 +41,8 @@ interface DetailComponent{
     interface Builder{
         fun detailModule(module:DetailModule):Builder
         fun detailModule2(module:DetailModule2):Builder
+        fun dummy2(module:DummyUtilModule2): Builder
+        fun dummy3(module:DummyUtilModule3): Builder
         fun build():DetailComponent
-    }
-}
-
-@Subcomponent(modules = [DetailModule::class, DetailModule2::class])
-interface DetailPresenterComponent{
-    fun inject(presenter:DetailPresenterImp)
-
-    @Subcomponent.Builder
-    interface Builder{
-        fun detailModule(module:DetailModule):Builder
-        fun detailModule2(module:DetailModule2):Builder
-        fun build():DetailPresenterComponent
     }
 }
