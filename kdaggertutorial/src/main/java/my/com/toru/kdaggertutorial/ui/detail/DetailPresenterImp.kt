@@ -1,7 +1,7 @@
 package my.com.toru.kdaggertutorial.ui.detail
 
 import android.util.Log
-import my.com.toru.kdaggertutorial.di.DaggerDetailFragmentComponent
+import my.com.toru.kdaggertutorial.di.DaggerDetailPresentComponent
 import my.com.toru.kdaggertutorial.presenter.DetailContracts
 import my.com.toru.kdaggertutorial.util.DetailUtil
 import my.com.toru.kdaggertutorial.util.DummyUtil
@@ -16,10 +16,11 @@ class DetailPresenterImp(val view:DetailContracts.DetailView): DetailContracts.D
     lateinit var test2:DetailUtil
 
     init {
-        DaggerDetailFragmentComponent.builder().build()
-                .detailPresenerComponentBuilder()
+        DaggerDetailPresentComponent.builder()
                 .build()
-                .inject(this@DetailPresenterImp)
+                .detailPresenterComponentBuilder()
+                .build()
+                .inject(this)
     }
 
     override fun onSimulateNetwork() {
