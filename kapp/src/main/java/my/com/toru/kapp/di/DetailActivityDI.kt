@@ -3,7 +3,9 @@ package my.com.toru.kapp.di
 import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
+import dagger.android.ContributesAndroidInjector
 import my.com.toru.kapp.ui.detail.DetailActivity
+import my.com.toru.kapp.ui.detail.DetailFragment
 import my.com.toru.kapp.util.DummyUtil3
 
 @Subcomponent(modules = [DetailActivityModule::class])

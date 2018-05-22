@@ -15,5 +15,9 @@ class DetailActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         dummyUtil3.testCode()
+
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.detail_frame, DetailFragment.newInstance())
+                .commit()
     }
 }
