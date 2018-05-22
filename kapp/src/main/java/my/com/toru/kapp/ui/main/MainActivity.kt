@@ -1,7 +1,8 @@
-package my.com.toru.kapp
+package my.com.toru.kapp.ui.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import my.com.toru.kapp.R
 
 class MainActivity : AppCompatActivity() {
 
