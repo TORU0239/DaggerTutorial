@@ -11,9 +11,9 @@ abstract class ActivityBindingModule {
     @ContributesAndroidInjector(modules=[MainActivityModule::class])
     abstract fun mainActivity():MainActivity
 
-    @ContributesAndroidInjector(modules=[DetailActivityModule::class])
+    @ContributesAndroidInjector(modules=[DetailActivityModule::class, FragmentModule::class])
     abstract fun detailActivity(): DetailActivity
 
-    @ContributesAndroidInjector(modules=[DetailActivityModule::class])
-    abstract fun detailFragment(): DetailFragment
+//    @ContributesAndroidInjector(modules=[DetailActivityModule::class])
+//    abstract fun detailFragment(): DetailFragment
 }
