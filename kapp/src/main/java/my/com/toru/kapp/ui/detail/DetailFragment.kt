@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_detail.*
 import my.com.toru.kapp.R
 import my.com.toru.kapp.util.DummyUtil3
 import javax.inject.Inject
@@ -24,6 +25,7 @@ class DetailFragment : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dummyUtil3.testCode()
+        txt_detail.text = dummyUtil3.printTestCode()
     }
 
     companion object {
