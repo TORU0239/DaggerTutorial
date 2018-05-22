@@ -1,1 +1,1 @@
-include ':app', ':kdaggertutorial'
+include ':app', ':kdaggertutorial', ':kapp'
