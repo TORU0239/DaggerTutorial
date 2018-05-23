@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [AndroidSupportInjectionModule::class,
                         ActivityBindingModule::class,
-                        ApplicationModule::class,
                         SingletonModule::class])
 interface ApplicationComponent:AndroidInjector<KApp> {
     override fun inject(app:KApp)
@@ -25,12 +24,6 @@ interface ApplicationComponent:AndroidInjector<KApp> {
         fun singletonModule(singletonModule: SingletonModule):ApplicationComponent.Builder
         fun build():ApplicationComponent
     }
-}
-
-@Module
-class ApplicationModule(private val app:Application){
-//    @Provides
-//    fun provideApplicationContext() = app
 }
 
 @Module
