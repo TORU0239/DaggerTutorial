@@ -29,6 +29,7 @@ class DetailFragment : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dummyUtil3.testCode()
+        testSingletonUtil.test()
         txt_detail.text = dummyUtil3.printTestCode()
 
 

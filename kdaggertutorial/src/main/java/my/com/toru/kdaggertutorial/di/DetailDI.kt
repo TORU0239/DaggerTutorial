@@ -3,7 +3,6 @@ package my.com.toru.kdaggertutorial.di
 import dagger.Module
 import dagger.Provides
 import dagger.Subcomponent
-import my.com.toru.kdaggertutorial.ui.detail.DetailActivity
 import my.com.toru.kdaggertutorial.ui.detail.DetailFragment
 import my.com.toru.kdaggertutorial.ui.detail.DetailPresenterImp
 import my.com.toru.kdaggertutorial.util.DetailUtil
