@@ -10,4 +10,6 @@ class DummyUtil {
     fun testCode(){
         Log.w("DummyUtil", "testCode!!!!! ")
     }
+
+    fun testString() = "Welcome to Dagger2 World!!"
 }

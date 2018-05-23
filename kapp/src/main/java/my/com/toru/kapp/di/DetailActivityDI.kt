@@ -2,9 +2,7 @@ package my.com.toru.kapp.di
 
 import dagger.Module
 import dagger.Provides
-import dagger.Subcomponent
 import dagger.android.ContributesAndroidInjector
-import my.com.toru.kapp.ui.detail.DetailActivity
 import my.com.toru.kapp.ui.detail.DetailFragment
 import my.com.toru.kapp.util.DummyUtil3
 
@@ -23,4 +21,11 @@ import my.com.toru.kapp.util.DummyUtil3
 class DetailActivityModule{
     @Provides
     fun getDummyUtil3() = DummyUtil3()
+}
+
+
+@Module
+abstract class DetailFragmentModule{
+    @ContributesAndroidInjector
+    abstract fun contributeDetailFragment():DetailFragment
 }
