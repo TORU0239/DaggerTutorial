@@ -13,6 +13,7 @@ import my.com.toru.kapp.ui.detail.DetailActivity
 import my.com.toru.kapp.util.DummyUtil
 import my.com.toru.kapp.util.DummyUtil2
 import my.com.toru.kapp.util.DummyUtil3
+import my.com.toru.kapp.util.SingletonUtil
 import javax.inject.Inject
 
 class MainFragment : DaggerFragment() {
@@ -30,6 +31,9 @@ class MainFragment : DaggerFragment() {
     @Inject
     lateinit var dummyUtil3: DummyUtil3
 
+    @Inject
+    lateinit var testSingletonUtil: SingletonUtil
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -40,6 +44,7 @@ class MainFragment : DaggerFragment() {
 
         dummyUtil.testCode()
         dummyUtil2.testCode()
+        testSingletonUtil.test()
 
         txtMain.text = dummyUtil.testString() + "\n" + dummyUtil2.testString() + "\n" +dummyUtil3.printTestCode()
 
