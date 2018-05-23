@@ -10,4 +10,6 @@ class DummyUtil2 {
     fun testCode(){
         Log.w("DummyUtil2", "testCode!!!!! ")
     }
+
+    fun testString() = "Injected String!"
 }

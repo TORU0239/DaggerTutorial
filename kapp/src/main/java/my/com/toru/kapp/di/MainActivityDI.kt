@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.Subcomponent
 import dagger.android.ContributesAndroidInjector
 import my.com.toru.kapp.ui.main.MainActivity
+import my.com.toru.kapp.ui.main.MainFragment
 import my.com.toru.kapp.util.DummyUtil
 import my.com.toru.kapp.util.DummyUtil2
 
@@ -26,4 +27,10 @@ class MainActivityModule{
 
     @Provides
     fun getDummyUtil2() = DummyUtil2()
+}
+
+@Module
+abstract class MainFragmentModule{
+    @ContributesAndroidInjector
+    abstract fun contributeMainFragment():MainFragment
 }

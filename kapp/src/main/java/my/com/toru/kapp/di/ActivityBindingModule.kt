@@ -7,7 +7,7 @@ import my.com.toru.kapp.ui.main.MainActivity
 
 @Module
 abstract class ActivityBindingModule {
-    @ContributesAndroidInjector(modules=[MainActivityModule::class])
+    @ContributesAndroidInjector(modules=[MainActivityModule::class, MainFragmentModule::class])
     abstract fun mainActivity():MainActivity
 
     @ContributesAndroidInjector(modules=[DetailActivityModule::class, DetailFragmentModule::class])
