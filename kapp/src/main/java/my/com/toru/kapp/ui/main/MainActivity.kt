@@ -25,8 +25,8 @@ class MainActivity : DaggerAppCompatActivity() {
         dummyUtil.testCode()
         dummyUtil2.testCode()
 
-        btn_goto_next.setOnClickListener {
-            startActivity(Intent(this@MainActivity, DetailActivity::class.java))
-        }
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frame, MainFragment.newInstance())
+                .commit()
     }
 }

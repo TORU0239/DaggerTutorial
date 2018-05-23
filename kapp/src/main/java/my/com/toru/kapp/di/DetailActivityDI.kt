@@ -28,7 +28,7 @@ class DetailActivityModule{
 
 
 @Module
-abstract class FragmentModule{
+abstract class DetailFragmentModule{
     @ContributesAndroidInjector
     abstract fun contributeDetailFragment():DetailFragment
 }
