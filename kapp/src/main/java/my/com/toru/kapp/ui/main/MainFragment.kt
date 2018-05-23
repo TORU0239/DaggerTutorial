@@ -12,6 +12,7 @@ import my.com.toru.kapp.R
 import my.com.toru.kapp.ui.detail.DetailActivity
 import my.com.toru.kapp.util.DummyUtil
 import my.com.toru.kapp.util.DummyUtil2
+import my.com.toru.kapp.util.DummyUtil3
 import javax.inject.Inject
 
 class MainFragment : DaggerFragment() {
@@ -26,6 +27,9 @@ class MainFragment : DaggerFragment() {
     @Inject
     lateinit var dummyUtil2: DummyUtil2
 
+    @Inject
+    lateinit var dummyUtil3: DummyUtil3
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -37,7 +41,7 @@ class MainFragment : DaggerFragment() {
         dummyUtil.testCode()
         dummyUtil2.testCode()
 
-        txtMain.text = dummyUtil.testString() + "\n" + dummyUtil2.testString()
+        txtMain.text = dummyUtil.testString() + "\n" + dummyUtil2.testString() + "\n" +dummyUtil3.printTestCode()
 
         btnGoOnNext.setOnClickListener {
             startActivity(Intent(activity, DetailActivity::class.java))
