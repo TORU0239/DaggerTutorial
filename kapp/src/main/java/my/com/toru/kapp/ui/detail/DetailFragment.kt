@@ -9,6 +9,7 @@ import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_detail.*
 import my.com.toru.kapp.R
 import my.com.toru.kapp.util.DummyUtil3
+import my.com.toru.kapp.util.SingletonUtil
 import javax.inject.Inject
 
 
@@ -16,6 +17,9 @@ class DetailFragment : DaggerFragment() {
 
     @Inject
     lateinit var dummyUtil3: DummyUtil3
+
+    @Inject
+    lateinit var testSingletonUtil: SingletonUtil
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,7 +29,10 @@ class DetailFragment : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dummyUtil3.testCode()
+        testSingletonUtil.test()
         txt_detail.text = dummyUtil3.printTestCode()
+
+
     }
 
     companion object {

@@ -8,22 +8,26 @@ import dagger.Provides
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import my.com.toru.kapp.app.KApp
+import my.com.toru.kapp.util.SingletonUtil
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AndroidSupportInjectionModule::class, ActivityBindingModule::class, ApplicationModule::class])
+@Component(modules = [AndroidSupportInjectionModule::class,
+                        ActivityBindingModule::class,
+                        SingletonModule::class])
 interface ApplicationComponent:AndroidInjector<KApp> {
+    override fun inject(app:KApp)
 
-    interface Builder:AndroidInjector<KApp>{
+    @Component.Builder
+    interface Builder {
+        @BindsInstance fun application(app:Application):ApplicationComponent.Builder
+        fun singletonModule(singletonModule: SingletonModule):ApplicationComponent.Builder
         fun build():ApplicationComponent
-
-        @BindsInstance
-        fun application(app:Application):ApplicationComponent.Builder
     }
 }
 
 @Module
-class ApplicationModule(private val app:Application){
+class SingletonModule {
     @Provides
-    fun provideApplicationContext() = app
+    fun provideSingletonUtil() = SingletonUtil()
 }
